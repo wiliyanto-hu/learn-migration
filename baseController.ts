@@ -1,4 +1,4 @@
-import { Context } from '@oak/oak/context';
+import { Context } from '@oak/oak';
 import { HTTP_STATUS } from './constant/HttpStatus.ts';
 
 export class BaseController {
