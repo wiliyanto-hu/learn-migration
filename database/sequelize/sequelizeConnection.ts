@@ -10,7 +10,7 @@ export class SequelizeConnection implements DatabaseConnection {
       password: Deno.env.get('DB_PASSWORD'),
       port: Deno.env.get('DB_PORT'),
       host: Deno.env.get('DB_HOST'),
-      database: 'defaultdb',
+      database: 'blog_post_db',
     });
   }
   async connect(): Promise<object> {

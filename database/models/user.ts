@@ -14,6 +14,8 @@ export default class User extends Model<
   declare id: CreationOptional<string>;
   declare first_name: string;
   declare last_name: string;
+  declare email: string;
+  declare created_on: number;
 }
 
 User.init(
@@ -29,9 +31,15 @@ User.init(
     last_name: {
       type: DataTypes.STRING,
     },
+    email: {
+      type: DataTypes.STRING,
+    },
+    created_on: {
+      type: DataTypes.INTEGER,
+    },
   },
   {
-    tableName: 'user_profile',
+    tableName: 'user',
     sequelize,
     timestamps: false,
   }
