@@ -4,13 +4,15 @@ import { DatabaseConnection } from '../databaseConnection.ts';
 export class SequelizeConnection implements DatabaseConnection {
   private sequelize;
   constructor() {
+    const dbPort = Deno.env.get('DB_PORT') ?? '3306';
+
     this.sequelize = new Sequelize({
       username: Deno.env.get('DB_USER'),
       dialect: 'mysql',
       password: Deno.env.get('DB_PASSWORD'),
-      port: Deno.env.get('DB_PORT'),
+      port: parseInt(dbPort),
       host: Deno.env.get('DB_HOST'),
-      database: 'blog_post_db',
+      database: Deno.env.get('DB_NAME'),
     });
   }
   async connect(): Promise<object> {
