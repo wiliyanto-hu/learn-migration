@@ -1,5 +1,5 @@
 import { Context } from '@oak/oak';
-import { HTTP_STATUS } from './constant/HttpStatus.ts';
+import { HTTP_STATUS } from './src/constant/HttpStatus.ts';
 
 export class BaseController {
   ok(ctx: Context, message: string, data = {}): void {

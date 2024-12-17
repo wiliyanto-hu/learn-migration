@@ -1,6 +1,6 @@
 import { Application, Router } from '@oak/oak';
 import { BaseController } from './baseController.ts';
-import User from './database/models/user.ts';
+import User from './src/database/models/user.ts';
 const baseController = new BaseController();
 
 const router = new Router();

@@ -15,7 +15,7 @@ export class SequelizeConnection implements DatabaseConnection {
       database: Deno.env.get('DB_NAME'),
     });
   }
-  async connect(): Promise<object> {
+  async connect(): Promise<Sequelize> {
     await this.sequelize.authenticate();
     return this.sequelize;
   }
