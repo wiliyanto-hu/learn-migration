@@ -16,6 +16,7 @@ export default class User extends Model<
   declare last_name: string;
   declare email: string;
   declare created_on: number;
+  declare contact: string;
 }
 
 User.init(
@@ -37,13 +38,13 @@ User.init(
     created_on: {
       type: DataTypes.INTEGER,
     },
+    contact: {
+      type: DataTypes.STRING,
+    },
   },
   {
-    tableName: 'user',
+    tableName: 'Users',
     sequelize,
     timestamps: false,
   }
 );
-
-//TODO: sequelize cannot false / import directly from library? / How to use existing ?
-//TODO: Test create user
