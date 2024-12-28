@@ -4,9 +4,12 @@
     "migrate": "deno run --allow-net --allow-read --allow-env --allow-sys npm:sequelize-cli db:migrate",
     "generate-migration": "deno run --allow-net --allow-read --allow-env --allow-sys npm:sequelize-cli migration:generate --name",
     "undo-migration": "deno run --allow-net --allow-read --allow-env --allow-sys npm:sequelize-cli db:migrate:undo",
+    "undo-all-migration": "deno run --allow-net --allow-read --allow-env --allow-sys npm:sequelize-cli db:migrate:undo:all",
     "generate-seed-file": "deno run --allow-net --allow-read --allow-env --allow-sys npm:sequelize-cli seed:generate --name",
     "generate-seed": "deno run --allow-net --allow-read --allow-env --allow-sys npm:sequelize-cli db:seed:all",
-    "delete-seed": "deno run --allow-net --allow-read --allow-env --allow-sys npm:sequelize-cli db:seed:undo"
+    "delete-seed": "deno run --allow-net --allow-read --allow-env --allow-sys npm:sequelize-cli db:seed:undo --seed",
+    "delete-latest-seed": "deno run --allow-net --allow-read --allow-env --allow-sys npm:sequelize-cli db:seed:undo",
+    "delete-all-seed": "deno run --allow-net --allow-read --allow-env --allow-sys npm:sequelize-cli db:seed:undo:all"
   },
   "imports": {
     "@oak/oak": "jsr:@oak/oak@^17.1.3",
